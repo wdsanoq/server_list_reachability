@@ -24,7 +24,8 @@ defmodule ServerListReachability do
   end
 
   def get_socks(server) do
-    Map.get(server, "hostname")
+    name = Map.get(server, "socks_name")
+    "socks5://#{name}:1080"
   end
 
   def result() do
